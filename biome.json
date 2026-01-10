@@ -1,0 +1,51 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true,
+      "allowWrongLineComments": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":NODE:", ":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:"],
+              ["@/**", "./**", "../**"],
+              [{ "type": true }]
+            ],
+            "identifierOrder": "natural"
+          }
+        }
+      }
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "correctness": {
+        "noNodejsModules": "warn",
+        "noReactPropAssignments": "warn",
+        "noUnusedVariables": "warn",
+        "noUnknownFunction": "off"
+      },
+      "suspicious": {
+        "noDuplicateCustomProperties": "off"
+      },
+      "style": {
+        "useImportType": "warn"
+      }
+    }
+  }
+}
