@@ -6,9 +6,9 @@ import {
   View,
 } from "react-native";
 import Animated from "react-native-reanimated";
+import { BlurView } from "@/components/uniwind/uniwind-components";
 import { BLUR_VIEW_SWITCHES, DEMO_IMAGES } from "@/core/constants";
 import { useScrollHandler } from "@/core/hooks/use-scroll-handler";
-import { BlurView } from "@/core/utils/uniwind-components";
 
 const BLUR_TYPES = [
   { name: "X Light", type: "xlight" },

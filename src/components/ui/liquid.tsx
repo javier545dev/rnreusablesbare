@@ -1,4 +1,7 @@
-import { LiquidGlassContainer, LiquidGlassView } from "@sbaiahmed1/react-native-blur";
+import {
+  LiquidGlassContainer,
+  LiquidGlassView,
+} from "@sbaiahmed1/react-native-blur";
 import { useRef, useState } from "react";
 import {
   Animated,
@@ -12,8 +15,14 @@ import {
 } from "react-native";
 import { glassColors } from "@/core/constants";
 
-const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }) => {
-  const [selectedGlassType, setSelectedGlassType] = useState<"clear" | "regular">("clear");
+const LiquidGlassExample = ({
+  cycleBackground,
+}: {
+  cycleBackground: () => void;
+}) => {
+  const [selectedGlassType, setSelectedGlassType] = useState<
+    "clear" | "regular"
+  >("clear");
   const [glassTintColor, setGlassTintColor] = useState("#007AFF");
   const [glassOpacity, setGlassOpacity] = useState(0.8);
   const [containerSpacing, setContainerSpacing] = useState(20);
@@ -53,11 +62,16 @@ const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }
           <Text style={styles.liquidGlassTitle}>🌊 Liquid Glass</Text>
           <Text style={styles.liquidGlassInfo}>Type: {selectedGlassType}</Text>
           <Text style={styles.liquidGlassInfo}>Tint: {glassTintColor}</Text>
-          <Text style={styles.liquidGlassInfo}>Opacity: {Math.round(glassOpacity * 100)}%</Text>
+          <Text style={styles.liquidGlassInfo}>
+            Opacity: {Math.round(glassOpacity * 100)}%
+          </Text>
           <Text style={styles.liquidGlassInfo}>Radius: {20}px</Text>
 
           <TouchableOpacity
-            style={[styles.glassButton, { backgroundColor: glassTintColor + "40" }]}
+            style={[
+              styles.glassButton,
+              { backgroundColor: glassTintColor + "40" },
+            ]}
             onPress={cycleBackground}
           >
             <Text style={styles.glassButtonText}>Change Background</Text>
@@ -81,7 +95,9 @@ const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }
           {["clear", "regular"].map((glassType) => (
             <TouchableOpacity
               key={glassType}
-              onPress={() => setSelectedGlassType(glassType as "clear" | "regular")}
+              onPress={() =>
+                setSelectedGlassType(glassType as "clear" | "regular")
+              }
               style={styles.glassTypeButton}
             >
               <LiquidGlassView
@@ -182,10 +198,15 @@ const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }
           glassOpacity={0.3}
           style={styles.selectorHeader}
         >
-          <Text style={styles.selectorTitle}>🌊 Liquid Glass Container (iOS 26+)</Text>
+          <Text style={styles.selectorTitle}>
+            🌊 Liquid Glass Container (iOS 26+)
+          </Text>
         </LiquidGlassView>
 
-        <LiquidGlassContainer spacing={containerSpacing} style={styles.containerDemo}>
+        <LiquidGlassContainer
+          spacing={containerSpacing}
+          style={styles.containerDemo}
+        >
           <LiquidGlassView
             glassType="clear"
             glassTintColor="#000000"
@@ -211,7 +232,10 @@ const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }
         </LiquidGlassContainer>
 
         {/* Animate Button */}
-        <TouchableOpacity style={styles.animateButton} onPress={animateCirclesCloser}>
+        <TouchableOpacity
+          style={styles.animateButton}
+          onPress={animateCirclesCloser}
+        >
           <Text style={styles.animateButtonText}>✨ Animate Circles</Text>
         </TouchableOpacity>
 
@@ -256,8 +280,8 @@ const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }
             >
               <Text style={styles.glassCardTitle}>Interactive Glass Card</Text>
               <Text style={styles.glassCardText}>
-                Liquid glass creates beautiful, interactive surfaces that respond to touch and
-                light.
+                Liquid glass creates beautiful, interactive surfaces that
+                respond to touch and light.
               </Text>
               <View style={styles.glassCardButtons}>
                 <TouchableOpacity style={styles.glassCardButton}>
@@ -306,8 +330,9 @@ const LiquidGlassExample = ({ cycleBackground }: { cycleBackground: () => void }
         >
           <Text style={styles.versionInfoTitle}>📱 iOS 26+ Required</Text>
           <Text style={styles.versionInfoText}>
-            Liquid glass effects are only available on iOS 26 and later. On older versions, the
-            component automatically falls back to regular blur effects.
+            Liquid glass effects are only available on iOS 26 and later. On
+            older versions, the component automatically falls back to regular
+            blur effects.
           </Text>
         </LiquidGlassView>
       </View>

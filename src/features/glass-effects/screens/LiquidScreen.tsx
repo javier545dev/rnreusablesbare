@@ -16,13 +16,7 @@ export default function LiquidGlassScreen() {
       style={{ flex: 1 }}
       resizeMode="cover"
     >
-      <ScrollView
-        contentContainerStyle={{
-          padding: 20,
-          paddingBottom: 100,
-          paddingTop: 40,
-        }}
-      >
+      <ScrollView contentContainerClassName="px-6 pb-24 pt-12">
         <LiquidGlassExample cycleBackground={cycleBackground} />
       </ScrollView>
     </ImageBackground>
