@@ -1,10 +1,10 @@
-import { View } from "react-native";
-import { Button } from "@/components/ui/button";
-import { Text } from "@/components/ui/text";
-import { useColorScheme } from "@/core/hooks/use-color-scheme";
+import { View } from 'react-native'
+import { Button } from '@/components/ui/button'
+import { Text } from '@/components/ui/text'
+import { useColorScheme } from '@/core/hooks/use-color-scheme'
 
 export default function SettingsScreen() {
-  const { toggleColorScheme, colorScheme } = useColorScheme();
+  const { toggleColorScheme, colorScheme } = useColorScheme()
 
   return (
     <View className="flex-1 justify-center items-center gap-6 bg-background">
@@ -15,5 +15,5 @@ export default function SettingsScreen() {
         <Text>Toggle Theme</Text>
       </Button>
     </View>
-  );
+  )
 }

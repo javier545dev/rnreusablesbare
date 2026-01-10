@@ -1,17 +1,14 @@
-import { type BlurType, BlurView } from "@sbaiahmed1/react-native-blur";
-import { type StyleProp, StyleSheet, type ViewStyle } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { type BlurType, BlurView } from '@sbaiahmed1/react-native-blur'
+import { type StyleProp, StyleSheet, type ViewStyle } from 'react-native'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
 
 interface GlassBackgroundProps {
-  blurType?: BlurType;
-  style?: StyleProp<ViewStyle>;
+  blurType?: BlurType
+  style?: StyleProp<ViewStyle>
 }
 
-export const HeaderGlassBackground = ({
-  blurType = "light",
-  style,
-}: GlassBackgroundProps) => {
-  const insets = useSafeAreaInsets();
+export const HeaderGlassBackground = ({ blurType = 'light', style }: GlassBackgroundProps) => {
+  const insets = useSafeAreaInsets()
 
   return (
     <BlurView
@@ -20,19 +17,16 @@ export const HeaderGlassBackground = ({
       style={[
         StyleSheet.absoluteFill,
         {
-          top: -insets.top,
+          top: -insets.top
         },
-        style,
+        style
       ]}
     />
-  );
-};
+  )
+}
 
-export const TabBarGlassBackground = ({
-  blurType = "light",
-  style,
-}: GlassBackgroundProps) => {
-  const insets = useSafeAreaInsets();
+export const TabBarGlassBackground = ({ blurType = 'light', style }: GlassBackgroundProps) => {
+  const insets = useSafeAreaInsets()
 
   return (
     <BlurView
@@ -41,10 +35,10 @@ export const TabBarGlassBackground = ({
       style={[
         StyleSheet.absoluteFill,
         {
-          bottom: -insets.bottom,
+          bottom: -insets.bottom
         },
-        style,
+        style
       ]}
     />
-  );
-};
+  )
+}

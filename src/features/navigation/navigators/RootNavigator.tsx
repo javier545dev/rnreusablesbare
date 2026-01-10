@@ -1,42 +1,38 @@
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { StatusBar } from "react-native";
-import { enableScreens } from "react-native-screens";
-import { ROUTES } from "@/core/constants";
-import { useColorScheme } from "@/core/hooks/use-color-scheme";
-import { NAV_THEME } from "@/core/theme";
-import DetailsScreen from "@/features/details/screens/DetailsScreen";
-import GlassScreen from "@/features/glass-effects/screens/GlassScreen";
-import LiquidGlassScreen from "@/features/glass-effects/screens/LiquidScreen";
-import SettingsScreen from "@/features/settings/screens/SettingsScreen";
-import { HeaderGlassBackground } from "../components/GlassBackgrounds";
-import TabNavigator from "./TabNavigator";
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { StatusBar } from 'react-native'
+import { enableScreens } from 'react-native-screens'
+import { ROUTES } from '@/core/constants'
+import { useColorScheme } from '@/core/hooks/use-color-scheme'
+import { NAV_THEME } from '@/core/theme'
+import DetailsScreen from '@/features/details/screens/DetailsScreen'
+import GlassScreen from '@/features/glass-effects/screens/GlassScreen'
+import LiquidGlassScreen from '@/features/glass-effects/screens/LiquidScreen'
+import SettingsScreen from '@/features/settings/screens/SettingsScreen'
+import { HeaderGlassBackground } from '../components/GlassBackgrounds'
+import TabNavigator from './TabNavigator'
 
-enableScreens();
+enableScreens()
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator()
 
 export function RootNavigator() {
-  const { colorScheme } = useColorScheme();
-  const isDark = colorScheme === "dark";
+  const { colorScheme } = useColorScheme()
+  const isDark = colorScheme === 'dark'
   return (
     <>
-      <StatusBar barStyle={isDark ? "light-content" : "dark-content"} />
+      <StatusBar barStyle={isDark ? 'light-content' : 'dark-content'} />
       <NavigationContainer theme={isDark ? NAV_THEME.dark : NAV_THEME.light}>
         <Stack.Navigator
           screenOptions={{
             headerTransparent: true,
-            headerTintColor: isDark
-              ? NAV_THEME.dark.colors.text
-              : NAV_THEME.light.colors.text,
+            headerTintColor: isDark ? NAV_THEME.dark.colors.text : NAV_THEME.light.colors.text,
             headerStyle: {
-              backgroundColor: "transparent",
+              backgroundColor: 'transparent'
             },
             headerBackground: () => (
-              <HeaderGlassBackground
-                blurType={isDark ? "extraDark" : "regular"}
-              />
-            ),
+              <HeaderGlassBackground blurType={isDark ? 'extraDark' : 'regular'} />
+            )
           }}
         >
           <Stack.Screen
@@ -50,12 +46,12 @@ export function RootNavigator() {
             name={ROUTES.GLASS}
             component={GlassScreen}
             options={{
-              title: "Glass Integration",
+              title: 'Glass Integration',
               headerTransparent: true,
-              headerBlurEffect: "regular",
+              headerBlurEffect: 'regular',
               headerStyle: {
-                backgroundColor: "transparent",
-              },
+                backgroundColor: 'transparent'
+              }
             }}
           />
 
@@ -63,16 +59,16 @@ export function RootNavigator() {
             name={ROUTES.LIQUID}
             component={LiquidGlassScreen}
             options={{
-              title: "Liquid Effect",
+              title: 'Liquid Effect',
               headerTransparent: true,
-              headerBlurEffect: "regular",
+              headerBlurEffect: 'regular',
               headerStyle: {
-                backgroundColor: "transparent",
-              },
+                backgroundColor: 'transparent'
+              }
             }}
           />
         </Stack.Navigator>
       </NavigationContainer>
     </>
-  );
+  )
 }

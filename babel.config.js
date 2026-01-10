@@ -2,21 +2,21 @@
 // const workletsPluginOptions = {};
 
 module.exports = (api) => {
-  api.cache(true);
+  api.cache(true)
   return {
-    presets: ["module:@react-native/babel-preset"],
+    presets: ['module:@react-native/babel-preset'],
     plugins: [
       [
-        "module-resolver",
+        'module-resolver',
         {
-          root: ["./src"],
-          extensions: [".ios.js", ".android.js", ".js", ".ts", ".tsx", ".json"],
+          root: ['./src'],
+          extensions: ['.ios.js', '.android.js', '.js', '.ts', '.tsx', '.json'],
           alias: {
-            "@": "./src",
-          },
-        },
+            '@': './src'
+          }
+        }
       ],
-      "react-native-worklets/plugin",
-    ],
-  };
-};
+      'react-native-worklets/plugin'
+    ]
+  }
+}
