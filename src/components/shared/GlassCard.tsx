@@ -1,5 +1,6 @@
-import { type BlurType, BlurView } from "@sbaiahmed1/react-native-blur";
-import { StyleSheet, View, type ViewProps } from "react-native";
+import type { BlurType } from "@sbaiahmed1/react-native-blur";
+import { View, type ViewProps } from "react-native";
+import { BlurView } from "@/components/uniwind/uniwind-components";
 import { cn } from "@/core/utils/cn";
 
 interface GlassCardProps extends ViewProps {
@@ -36,7 +37,7 @@ export function GlassCard({
       <BlurView
         blurType={blurType}
         blurAmount={intensityMap[intensity] || blurAmount}
-        style={StyleSheet.absoluteFill}
+        className="absolute"
       />
       <View className="p-5">{children}</View>
     </View>

@@ -1,12 +1,8 @@
-import { BlurSwitch, type BlurType } from "@sbaiahmed1/react-native-blur";
+import type { BlurType } from "@sbaiahmed1/react-native-blur";
 import { useState } from "react";
-import {
-  ImageBackground as NativeImageBackground,
-  Text,
-  View,
-} from "react-native";
+import { ImageBackground, Text, View } from "react-native";
 import Animated from "react-native-reanimated";
-import { BlurView } from "@/components/uniwind/uniwind-components";
+import { BlurSwitch, BlurView } from "@/components/uniwind/uniwind-components";
 import { BLUR_VIEW_SWITCHES, DEMO_IMAGES } from "@/core/constants";
 import { useScrollHandler } from "@/core/hooks/use-scroll-handler";
 
@@ -47,13 +43,13 @@ export default function ExamplesScreen() {
   };
 
   return (
-    <NativeImageBackground
+    <ImageBackground
       source={{ uri: DEMO_IMAGES[1] }}
-      style={{ flex: 1 }}
+      className="flex-1"
       resizeMode="cover"
     >
       <Animated.ScrollView
-        contentContainerStyle={{ padding: 20, paddingBottom: 100 }}
+        contentContainerClassName={"px-6 pb-24"}
         onScroll={scrollHandler}
         scrollEventThrottle={16}
       >
@@ -127,6 +123,6 @@ export default function ExamplesScreen() {
           </BlurView>
         ))}
       </Animated.ScrollView>
-    </NativeImageBackground>
+    </ImageBackground>
   );
 }
